@@ -1,0 +1,33 @@
+{% extends "farmer_dashboard_layout.html" %}
+
+{% block body %}
+
+	<table class="table table-hover">
+    	<thead>
+      		<tr>
+        		<th>S.No</th>
+				<th>Category of Produce</th>
+				<th>Crop Name</th>
+				<th>Description</th>
+				<th>Quantity</th>
+				<th>Action</th>
+      		</tr>
+    	</thead>
+
+    	<tbody>
+
+	    {% for product in produce %}
+	      	<tr>
+	        	<td> {{product.sno}} </td>
+	        	<td> {{product.produce_type}} </td>
+	        	<td> {{product.crop_type}} </td>
+	        	<td> {{product.description}} </td>
+	        	<td> {{product.quantity}} </td>
+	        	<td> <a href="/delete_produce/{{product.sno}}">Delete</a>  <a href="/edit_produce/{{product.sno}}">Edit</a></td>
+	      	</tr>
+	    {% endfor %}
+
+   		</tbody>
+ 	</table>
+
+{% endblock %}

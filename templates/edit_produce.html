@@ -1,0 +1,79 @@
+{% extends "farmer_dashboard_layout.html" %}
+
+{% block body %}
+
+		<form action="/edit_produce/{{produce.sno}}" method="post">
+			<h4>Edit the details about your produce</h4>
+
+			<table>
+
+				<tr>
+					<script>
+						var category;
+					</script>
+
+					<td>Add the Category</td>
+					<td>
+						<select name="category" id="produce_category" value="{{produce.produce_type}}">
+							<option value="Vegetables">Vegetables</option>
+							<option value="Fruits">Fruits</option>
+							<option value="Grains">Grains</option>
+						</select>
+					</td>
+
+				</tr>
+
+				<tr>
+					<!-------- Will add the functionality of sekecting the subcategory via category ------->
+					<td>Enter the name of new crop</td>
+					<td>
+						<input type="text" name="name_of_crop" value="{{produce.crop_type}}">
+					</td>
+				</tr>
+
+				<tr>
+					<td>Enter the details of the product</td>
+					<td>
+						<textarea name="details_of_produce">{{produce.description}}</textarea>
+					</td>
+				</tr>
+
+				<tr>
+					<td>Enter the quantity of produce</td>
+					<td>
+						<input type="number" name="quantity_of_produce" value="{{produce.quantity}}">
+					</td>
+				</tr>
+
+				<!-- Images -->
+				<!--
+				<tr>
+					<td>Enter first image : </td>
+					<td>
+						<input type="image" name="image_1">
+					</td>
+				</tr>
+
+				<tr>
+					<td>Enter second image : </td>
+					<td>
+						<input type="image" name="image_2">
+					</td>
+				</tr>
+
+				<tr>
+					<td>Enter third image : </td>
+					<td>
+						<input type="image" name="image_3">
+					</td>
+				</tr>
+				-->
+				<!-------///////////////////////////////----------->
+
+				<tr>
+					<td> <input type="submit"></td></td>
+				</tr>
+			</table>
+		</form>
+
+{% endblock %}
