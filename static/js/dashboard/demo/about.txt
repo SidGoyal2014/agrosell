@@ -1,1 +1,1 @@
-Contains only images
+JS folder completed
