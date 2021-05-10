@@ -1,0 +1,8 @@
+body {
+  padding-top: 56px;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+}
